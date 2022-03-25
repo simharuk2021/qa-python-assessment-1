@@ -7,12 +7,12 @@ def test_one():
     assert python1.one("echo", "print") == "print"
     assert python1.one("fire","rib") == "fire"
 
-# def test_two():
-#     assert python1.two(3) == "fizz"
-#     assert python1.two(10) == "buzz"
-#     assert python1.two(15) == "fizzbuzz"
-#     assert python1.two(8) == "null"
-#     assert python1.two(75) == "fizzbuzz"
+def test_two():
+    assert python1.two(3) == "fizz"
+    assert python1.two(10) == "buzz"
+    assert python1.two(15) == "fizzbuzz"
+    assert python1.two(8) == "null"
+    assert python1.two(75) == "fizzbuzz"
 
 # def test_three():
 #     assert python1.three("Hello") == 2 
