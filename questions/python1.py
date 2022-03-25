@@ -36,7 +36,14 @@
 	# What was the name of the function we have seen to check the length of a container?  Use your CLI to access the Python documentation and get help(len).
 
 def one(input1, input2):
-	return ""
+    if len(input1) > len(input2):
+        return(input1)
+    elif len(input1) == len(input2):
+        result = (input1, input2)
+        return (" ".join(result))
+    else:
+        return(input2)    
+# print(one("Hello", "Hi"))
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
@@ -59,8 +66,15 @@ def one(input1, input2):
 
 	# No hints for this question
 
-def two(arg1):
-	return "null"
+# def two(arg1):
+#     if arg1 % 3 == 0:
+#         return "fizz"
+#     elif arg1 % 5 == 0:
+#         return "buzz"
+#     elif arg1 % 3 == 0 and arg1 % 5 == 0:
+#         return "fizzbuzz"
+#     else:
+#         return "null"
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
