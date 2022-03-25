@@ -19,7 +19,7 @@
 
 	# <QUESTION 1>
 
-	# Define a function that can accept two strings as input and returns the string with maximum length to the console. 
+	# Define a function that can accept two strings as input and returns the input with maximum length to the console. 
 	
 	# If two strings have the same length, then the function should return both strings separated by a " ".
 
@@ -80,7 +80,7 @@ def two(arg1):
 
 	# <QUESTION 3>
 
-    # Write a function which returns the integer number of vowels in a given string. 
+    # Write a function which returns the integer number of vowels in a given input. 
     # You should ignore case.
 
 	# <EXAMPLES>
@@ -93,7 +93,12 @@ def two(arg1):
 	# How do we ignore case in a String? help(str) may offer some insight.
 
 def three(input):
-    return 0
+    vowels = 0
+    for letter in input.lower():
+        if letter in 'aeiouy':
+            vowels += 1
+    return vowels
+        
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
@@ -101,7 +106,7 @@ def three(input):
 
     # There is a well known mnemonic which goes "I before E, except after C", which is used to determine which order "ei" or "ie" should be in a word.
     
-    # Write a function which returns the boolean True if a string follows the mnemonic, and returns the boolean False if not.
+    # Write a function which returns the boolean True if a input follows the mnemonic, and returns the boolean False if not.
 
 	# <EXAMPLES>
 
@@ -114,9 +119,19 @@ def three(input):
 
 	# Step through the logic here in order to solve the problem, you may find help(range) helpful.
 
-
 def four(input):
-    return False
+    if 'ei' in input:
+        index = input.index('ei')
+        if input[index - 1] == 'c':
+            return True
+        else:
+            return False
+    if 'ie' in input:
+        index = input.index('ie')
+        if input[index -1] == 'c':
+            return False
+        else:
+            return True
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
@@ -136,13 +151,16 @@ def four(input):
 	# You may need to create a list of numbers from 0 to i, take a look at help(range).
 
 def five(input):
-	return 1
+
+    if input == 0:
+        return 1
+    return input * five(input - 1)
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
 	# <QUESTION 6>
 
-    # Given a string, int and a char, return a boolean value if the 'nth' 
+    # Given a input, int and a char, return a boolean value if the 'nth' 
     # (represented by the int provided) char of the String supplied is the same as the char supplied.
     # The int provided will NOT always be less than than the length of the String.
     # IGNORE case and Whitespace. 
@@ -157,14 +175,14 @@ def five(input):
 
 	# How do we find the length of a container, take a look at help(len), you will also need to look at help(str) for String manipulation.
  
-def six(string, int, char):
+def six(input, int, char):
 	return False
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
 	# <QUESTION 7>
 
-    # Given a string and a char, returns the position in the String where the char first appears.
+    # Given a input and a char, returns the position in the String where the char first appears.
     # Ensure the positions are numbered correctly, please refer to the examples for guidance.
     # DO NOT ignore case
     # IGNORE whitespace
@@ -187,7 +205,7 @@ def seven(inputString, char):
 
 	# <QUESTION 8>
 
-    # Given a string seperate the string into the individual numbers present, then add each digit of each number to get a final value for each number
+    # Given a input seperate the input into the individual numbers present, then add each digit of each number to get a final value for each number
 
 	# String example = "55 72 86"
 	
@@ -214,9 +232,9 @@ def eight(arg1):
 
 	# <QUESTION 9>
 
-    # Return the string that is between the first and last appearance of "bert" in the given string
+    # Return the input that is between the first and last appearance of "bert" in the given input
 	
-	# Return the empty string "" if there is not 2 occurances of "bert" 
+	# Return the empty input "" if there is not 2 occurances of "bert" 
 	
 	# IGNORE CASE
     
@@ -230,7 +248,7 @@ def eight(arg1):
 
 	# <HINT>
 
-	# What was the name of the function we have seen to seperate a String? How can we make a string all upper or lower case?
+	# What was the name of the function we have seen to seperate a String? How can we make a input all upper or lower case?
 	
 	# Use your CLI to access the Python documentation and get help manipulating strings - help(str).
 
@@ -241,7 +259,7 @@ def nine(input):
 
 	# <QUESTION 10>
 
-    # Given a large string that represents a csv, the structure of each record will be as follows:
+    # Given a large input that represents a csv, the structure of each record will be as follows:
     
     # owner,nameOfFile,encrypted?,fileSize
     
